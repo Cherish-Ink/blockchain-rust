@@ -4,16 +4,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 pub struct BlockHeader {
-    pub time: i64,
-    pub tx_hash: String,  //transactions data merkle root hash
-    pub pre_hash: String,
+    pub time: i64,  //时间戳
+    pub tx_hash: String,  //交易数据merkle数根hash值
+    pub pre_hash: String, //前一区块（父区块）hash值
 }
 
 #[derive(Debug)]
 pub struct Block {
-    pub header: BlockHeader,
-    pub hash: String,
-    pub data: String, //transactions data
+    pub header: BlockHeader,  //区块头部信息
+    pub hash: String,  //当前区块hash值
+    pub data: String, //交易数据
 }
 
 impl Block {
