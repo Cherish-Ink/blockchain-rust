@@ -6,7 +6,7 @@ use crypto::sha3::Sha3;
 // pub fn serialize<T: ?Sized>(value: &T) -> Result<Vec<u8>>
 // where
 //     T: Serialize,
-pub fn my_serialize<T: ?Sized>(value: &T) -> Vec<u8>
+pub fn my_serialize<T: ?Sized>(value: &T) -> Vec<u8>  //序列化
     where T: Serialize,
 {
     let seialized = bincode::serialize(value).unwrap();
@@ -16,7 +16,7 @@ pub fn my_serialize<T: ?Sized>(value: &T) -> Vec<u8>
 // pub fn deserialize<'a, T>(bytes: &'a [u8]) -> Result<T>
 // where
 //     T: Deserialize<'a>,
-pub fn my_deserialize<'a, T>(bytes: &'a[u8]) -> T
+pub fn my_deserialize<'a, T>(bytes: &'a[u8]) -> T  //反序列化
     where T: Deserialize<'a>,
 {
     let deserialized = bincode::deserialize(bytes).unwrap();
